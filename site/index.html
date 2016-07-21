@@ -1,9 +1,177 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hello Coursera</title>
+<meta charset="utf-8">
+<meta name="description" content="Free Web tutorials">
+<meta name="keywords" content="HTML,CSS,JavaScript,JQuery">
+<meta name="greeting" content="My ewb-page greets you everytime you leg onto the page">
+<meta name="background info" content="my background image come off the internet, it is not local">
+<link rel="stylesheet" href="calculator.css" type="text/css">
+<script type="text/javascript"> 
+function 
+setCookie(c_name,value,exdays)
+{ 
+var exdate=new Date();
+exdate.setDate(exdate.getDate() + exdays);
+var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString());
+document.cookie=c_name + "=" + c_value;
+} 
+
+function getCookie(c_name) 
+{ 
+var i,x,y,ARRcookies=document.cookie.split(";"); 
+for (i=0;i<ARRcookies.length;i++)
+{ 
+  x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
+  y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
+  x=x.replace(/^\s+|\s+$/g,"");
+  if (x==c_name) 
+    {
+    return unescape(y);
+    }
+  }   
+}
+
+function checkCookie() 
+{ 
+var username=getCookie("username");
+  if (username!=null && username!="")
+  { 
+  alert("Welcome again " + username);
+  } 
+else 
+  { 
+  username=prompt("Please enter your name:","");
+if (username!=null && username!="")
+    { 
+    setCookie("username",username,365);
+    } 
+  } 
+}
+</script>
+<link rel="stylesheet" type="text/css" href="cssbackground.css">
+
+<title>Scrooler's WebPage</title>
+
 </head>
-<body>
-<h1>Hello guys :D</h1>
+<body onload="checkCookie()">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+	fjs.parentNode.insertBefore(js, fjs);
+	} (document, 'script', 'facebook-jssdk'));</script>
+<section id = "section1">
+<h1><font color = "grey", size = "40">Scrooler's Web Services</font></h1>
+
+<p><font color = "grey" size = "5">Please fill out the form below.</font></p>
+<form method="post" autocomplete="on">
+	<p><label>First Name:
+		<input name = "first" type="text" id="firstname" placeholder="Enter First Name"/>
+		</label></p>
+	<p><label class="grey">Last Name:
+	<input name ="last" type="text" id="lastname" placeholder="Enter Last Name">
+		</label></p>
+	<p><label for = "txtList">Birth Month:
+		<input type="text" id="txtList" placeholder="Select a month please" list = "months"/>
+		<datalist id = "months">
+			<option value="January">
+			<option value="February">
+			<option value="March">
+			<option value="April">
+			<option value="May">
+			<option value="June">
+			<option value="July">
+			<option value="August">
+			<option value="September">
+			<option value="October">
+			<option value="November">
+			<option value="December">
+			</datalist>
+					</label></p>
+
+<script type="text/javascript">
+function OnSubmitForm()
+{
+  if(document.pressed == 'Submit')
+  {
+   document.myform.action ="secondPage.html";
+  }
+</script>
+
+<form name="myform" onsubmit="return onsubmitform();">
+
+			<p><button type="submit" value="Submit" style="height:50px;width:100px">Submit</button>
+			<button type="reset" value = "Clear" style="height:50px;width:100px">Clear</button></p>
+</form>		
+		</section>
+<section id = "section2">
+<p><h2>Select<nav>
+<a href="http://www.w3schools.com/html/default.asp">HTML</a> |
+<a href="http://www.w3schools.com/css/default.asp">CSS</a> |
+<a href="http://www.w3schools.com/js/default.asp">JavaScript</a> |
+<a href="http://www.w3schools.com/jquery/default.asp">jQuery</a>
+</nav> for more tutorials.</h2></p>
+
+<div class="fb-like-box" data-href="http://www.facebook.com/platform" data-width="292" data-show-faces="true" data-stream="true" data-header="true"></div>
+
+</section>
+<div id="calculator" align="right">
+	<!-- Screen and clear key -->
+	<div class="top">
+		<span class="clear">C</span>
+		<div class="screen"></div>
+	</div>
+	
+	<div class="keys">
+		<!-- operators and other keys -->
+		<span>7</span>
+		<span>8</span>
+		<span>9</span>
+		<span class="operator">+</span>
+		<span>4</span>
+		<span>5</span>
+		<span>6</span>
+		<span class="operator">-</span>
+		<span>1</span>
+		<span>2</span>
+		<span>3</span>
+		<span class="operator">÷</span>
+		<span>0</span>
+		<span>.</span>
+		<span class="eval">=</span>
+		<span class="operator">x</span>
+	</div>
+</div>
+<script type="text/javascript">
+	window.alert("Greetings and Welcome to my web-page!");
+</script>
+<!-- PrefixFree -->
+<script src="http://thecodeplayer.com/uploads/js/prefixfree-1.0.7.js" type="text/javascript" type="text/javascript"></script>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3JluqTojuME" frameborder="0" allowfullscreen></iframe>
+
+<iframe src="https://www.ustream.tv/embed/22628204?html5ui" style="border: 0 none transparent;"  webkitallowfullscreen allowfullscreen frameborder="no" width="480" height="270"></iframe>
+<script>
+var is_chrome = /chrome/i.test( navigator.userAgent );
+var is_firefox = /firefox/i.test( navigator.userAgent );
+
+if(is_chrome)
+{
+	window.alert("This is Chrome");
+}
+else
+{
+	if(is_firefox)
+	{
+		window.alert("This is firefox");
+	}
+	else
+		window.alert("I don't know what this is");
+}
+</script>
+<script type="text/javascript" src="calculator.js"></script>
 </body>
 </html>
